@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  bitwarden:
+    image: vaultwarden/server:1.24.0
+    container_name: bitwarden
+    restart: always
+    environment:
+      - WEBSOCKET_ENABLED=true
+    ports:
+      - 8010:80
+    volumes:
+      - /docker/bitwarden/vw-data:/data
